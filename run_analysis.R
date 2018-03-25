@@ -84,3 +84,5 @@ names(all) <- gsub("^Gyro", "gyroscope"   , names(all))
 all_mean <- all %>% 
     group_by(activity, subject) %>% 
     summarize_each(funs(mean))
+
+write.table(all_mean, "tidy.txt", row.names = FALSE, quote = FALSE)
